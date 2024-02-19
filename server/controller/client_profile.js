@@ -31,7 +31,7 @@ exports.addCar = async(req, res) => {
                 fuel_type
             }).then((car_info) =>
                 res.status(201).json({
-                    message: "Car info successfully added",
+                    message: "Car info successfully saved",
                     car_info,
                 })
             );
@@ -76,7 +76,6 @@ exports.allCars = async(req, res) => {
 exports.oneCar = async(req, res) => {
     const id = await Car.findById(req.params.id);
 
-    console.log(id);
     try {
         if (!id) {
             res.status(400);

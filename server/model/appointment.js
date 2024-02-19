@@ -18,9 +18,13 @@ const AppointmentSchema = new Mongoose.Schema({
         type: String,
         required: true,
     },
-    comment: {
+    details: {
         type: String,
-    }
+    },
+    date_time: {
+        type: String,
+        required: true,
+    },
 }, {
     timestamps: true
 })

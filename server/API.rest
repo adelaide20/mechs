@@ -91,3 +91,18 @@ content-type: application/json
 
 ### get one cars for a specific client
 GET {{API}}/client/one/65d3cfa3d9cdf447b7ab74ab
+
+
+
+### add aappointment
+POST {{API}}/client/app/create
+content-type: application/json
+
+{
+    "_client":"65d33bae6de10e4f874d4109",
+    "_car":"65d3cfa3d9cdf447b7ab74ab",
+    "_mechanic":"65d338996de10e4f874d4106",
+    "service_type":"painting",
+    "details":"want to get a new paint flauds happened",
+    "date_time":"16/02/2024 12:00"
+}
