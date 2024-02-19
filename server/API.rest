@@ -8,18 +8,19 @@
 GET {{API}}
 
 
+############### AUTH ROUTES ###############
 
 ### Register a user (client/mechanic)
 POST {{API}}/auth/register
 content-type: application/json
 
 {
-    "full_name":"Road Rover",
-    "email":"roadrover@gmail.com",
+    "full_name":"mech mechanic",
+    "email":"mech@gmail.com",
     "contact_no":"0123456789",
-    "location":["Midrand"],
-    "password":"rover1234",
-    "role":"client"
+    "location":["Dubai"],
+    "password":"mech1234",
+    "role":"mechanic"
 }
 
 
@@ -35,19 +36,26 @@ content-type: application/json
 
 
 
+############### MECHANIC ROUTES ###############
+
 ### Create mechanic profile
 POST {{API}}/mech/create
 content-type: application/json
 
 {
-    "_id":"65d338996de10e4f874d4106",
-    "bio":"I am located in Joburg & I fix cars, you can trust me.",
-    "language":["English", "Zulu", "Pedi"],
-    "speciality":"exterior body parts",
-    "service_fee":"500"
+    "_id":"65d3b154e97bd418af12302d",
+    "bio":"I am located in Dubai & I fix cars, you can trust me.",
+    "language":["English", "Venda", "Swahili"],
+    "speciality":"repair body parts",
+    "service_fee":"900"
 }
 
 
 
 ### get all mechanics
 GET {{API}}/mech/all
+
+
+
+### get all mechanics
+GET {{API}}/mech/one/65d338996de10e4f874d4106§

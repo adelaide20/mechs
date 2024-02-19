@@ -53,8 +53,36 @@ exports.profile = async(req, res) => {
 // ========== GET ALL MECHANICS ==========
 exports.allMechs = async(req, res) => {
     try {
-        const mechanics = await User.find({ role: "mechanic" });
-        res.status(200).json(mechanics);
+        await User.find({ role: "mechanic" })
+            .then(async(mec_info) => {
+                // Extracting _user values from  Users (mechanic info)
+                const mechanicIds = mec_info.map((user) => user._id);
+
+                // Using $lookup to join Users (mechanic info) with Profile (mechanic_profiles) collection based on _user field
+                const result = await User.aggregate([{
+                        $match: { _id: { $in: mechanicIds } } // Filtering users by their IDs
+                    },
+                    {
+                        $lookup: {
+                            from: "mechanic_profiles", // Profile collection is "mechanic_profiles"
+                            localField: "_id",
+                            foreignField: "_user",
+                            as: "profile"
+                        }
+                    }
+                ]);
+
+                // Mapping the result to match the original format
+                const combinedData = result.map((user) => ({
+                    "Mechanic Info": user,
+                }));
+
+                res.json(combinedData);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
     } catch (error) {
         res.status(500).json({
             message: "An error occurred while getting all the mechanics",
@@ -66,7 +94,22 @@ exports.allMechs = async(req, res) => {
 
 // ========== GET MECHANIC BY ID ==========
 exports.mech = async(req, res) => {
+    const id = await Profile.findById(req.params.id);
 
+    if (!id) {
+        res.status(400);
+        throw new Error('mechanic not found');
+    }
+
+    try {
+        const mechanic = await Profile.find({ id });
+        res.status(200).json(mechanic);
+    } catch (error) {
+        res.status(500).json({
+            message: "An error occurred while getting all the mechanics",
+            error: error.message
+        })
+    }
 }
 
 
