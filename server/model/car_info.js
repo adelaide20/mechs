@@ -2,32 +2,32 @@ const Mongoose = require("mongoose");
 
 
 // database profile schema (table in sql) 
-const ProfileSchema = new Mongoose.Schema({
+const CarSchema = new Mongoose.Schema({
     _user: {
         type: Mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
-    bio: {
+    model: {
         type: String,
         required: true,
     },
-    language: [{
+    make: {
         type: String,
         required: true,
-    }],
-    speciality: [{
+    },
+    registration: {
         type: String,
         required: true,
-    }],
-    service_fee: {
-        type: Number,
+    },
+    fuel_type: {
+        type: String,
         required: true,
-    }
+    },
 })
 
 
 // profile model holding the schema 
-const Profile = Mongoose.model("client_profile", ProfileSchema)
+const Car = Mongoose.model("cars", CarSchema)
 
 
-module.exports = Profile;
+module.exports = Car;
