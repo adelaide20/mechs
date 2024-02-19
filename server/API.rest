@@ -15,12 +15,12 @@ POST {{API}}/auth/register
 content-type: application/json
 
 {
-    "full_name":"mech mechanic",
-    "email":"mech@gmail.com",
+    "full_name":"fufu cars",
+    "email":"fufu@gmail.com",
     "contact_no":"0123456789",
-    "location":["Dubai"],
-    "password":"mech1234",
-    "role":"mechanic"
+    "location":["Pretoria"],
+    "password":"fufu1234",
+    "role":"client"
 }
 
 
@@ -70,10 +70,10 @@ POST {{API}}/client/add
 content-type: application/json
 
 {
-    "_id":"65d33bae6de10e4f874d4109",
+    "_id":"65d3d250c9e4dad6915652e5",
     "make":"Ford",
     "model":"Ranger",
-    "registration":"QWE123 GP",
+    "registration":"123QWE GP",
     "fuel_type":"dissel"
 }
 
@@ -84,5 +84,10 @@ GET {{API}}/client/all
 content-type: application/json
 
 {
-    "_id":"65d33bae6de10e4f874d4109"
+    "_id":"65d3d250c9e4dad6915652e5"
 }
+
+
+
+### get one cars for a specific client
+GET {{API}}/client/one/65d3cfa3d9cdf447b7ab74ab

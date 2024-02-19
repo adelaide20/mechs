@@ -16,6 +16,7 @@ const CarSchema = new Mongoose.Schema({
     },
     registration: {
         type: String,
+        unique: true,
         required: true,
     },
     fuel_type: {

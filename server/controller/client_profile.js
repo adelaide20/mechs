@@ -52,6 +52,11 @@ exports.allCars = async(req, res) => {
 
     const _id = req.body;
 
+    if (!_id) {
+        res.status(400);
+        throw new Error('client not found');
+    }
+
     try {
         const cars = await Car.find({
             _user: _id
@@ -69,7 +74,23 @@ exports.allCars = async(req, res) => {
 
 // ========== GET ONE CAR ==========
 exports.oneCar = async(req, res) => {
+    const id = await Car.findById(req.params.id);
 
+    console.log(id);
+    try {
+        if (!id) {
+            res.status(400);
+            throw new Error('car not found');
+        } else {
+            const car = await Car.findById(id);
+            res.status(200).json(car);
+        }
+    } catch (error) {
+        res.status(500).json({
+            message: `An error occurred while getting a car with ID: ${id}`,
+            error: error.message
+        })
+    }
 }
 
 
