@@ -2,8 +2,8 @@ const express = require("express")
 const router = express.Router()
 
 const { profile, allMechs, mech } = require("../controller/mechanic_profile");
-
-// 1. create mechanic profile
+const { appointmentStatus } = require("../controller/appintment")
+    // 1. create mechanic profile
 router.post("/create", profile);
 
 // 2. get all mechanics info
@@ -22,7 +22,7 @@ router.get("/one/:id", mech);
 
 
 // 7. accept appointment
-
+router.put("/app/status/:id", appointmentStatus)
 
 // 8. decline appointment
 

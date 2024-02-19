@@ -62,6 +62,16 @@ GET {{API}}/mech/one/65d338996de10e4f874d4106
 
 
 
+### update appointment status
+PUT {{API}}/mech/app/status/65d3e369f71606466b4f3bca
+content-type: application/json
+
+{
+    "status":"accepted"
+}
+
+
+
 
 ############### CLIENT ROUTES ###############
 

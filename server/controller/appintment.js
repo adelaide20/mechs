@@ -82,19 +82,29 @@ exports.oneAppointment = async(req, res) => {
 }
 
 
-// ========== MECHANIC ACCEPT APPOINTMENT ==========
-exports.acceptAppointment = async(req, res) => {
+// ========== MECHANIC & CLIENT UPDATE APPOINTMENT STATUS ==========
+// Status can either be: pending, accepted, declined, cancelled, or completed
+exports.appointmentStatus = async(req, res) => {
+    const id = req.params.id;
+    const newStatus = req.body.status;
 
-}
-
-
-// ========== MECHANIC DECLINE APPOINTMENTS ==========
-exports.declineAppointment = async(req, res) => {
-
-}
-
-
-// ========== CLIENT CANCEL APPOINTMENT ==========
-exports.cancelAppointment = async(req, res) => {
-
+    // Find the appointment by its ID and update the status
+    Appointment.findByIdAndUpdate(id, { status: newStatus }, { new: true })
+        .then((updatedAppointment) => {
+            if (updatedAppointment) {
+                // Appointment found and status updated successfully
+                res.status(201).json({
+                    message: "Appointment status successfully updated",
+                    updatedAppointment
+                })
+            } else {
+                // Appointment not found
+                res.status(404).json({ error: 'Appointment not found.' });
+            }
+        })
+        .catch((error) => {
+            // Error occurred while updating the appointment status
+            console.error(error);
+            res.status(500).json({ error: 'An error occurred while updating the appointment status.' });
+        });
 }
