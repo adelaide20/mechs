@@ -1,13 +1,13 @@
 const express = require("express")
 const router = express.Router()
 
-const { addCar } = require("../controller/client_profile");
+const { addCar, allCars } = require("../controller/client_profile");
 
 // 1. add a car
 router.post("/add", addCar);
 
 // 2. get all cars
-
+router.get("/all", allCars)
 
 // 3. get a specific car info
 

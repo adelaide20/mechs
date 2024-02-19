@@ -50,6 +50,19 @@ exports.addCar = async(req, res) => {
 // ========== GET ALL CARS ==========
 exports.allCars = async(req, res) => {
 
+    const _id = req.body;
+
+    try {
+        const cars = await Car.find({
+            _user: _id
+        })
+        res.status(200).json(cars);
+    } catch (error) {
+        res.status(500).json({
+            message: `An error occurred while getting cars for ID: ${_id}`,
+            error: error.message
+        })
+    }
 }
 
 
