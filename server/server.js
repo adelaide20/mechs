@@ -35,4 +35,7 @@ app.get('/', (req, res) => res.send('Hello, Welcome To Your Gear Guru Match Make
 // user auth route
 app.use('/auth', require("./routes/auth"));
 
+// mechanic route
+app.use('/mech', require("./routes/mechanic"));
+
 app.listen(port, () => console.log(`Example app listening on port  ${port}`));

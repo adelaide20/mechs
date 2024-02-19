@@ -32,3 +32,17 @@ content-type: application/json
     "email":"gearguru@gmail.com",
     "password":"guru1234"
 }
+
+
+
+### Create mechanic profile
+POST {{API}}/mech/create
+content-type: application/json
+
+{
+    "_id":"65d338996de10e4f874d4106",
+    "bio":"I am located in Joburg & I fix cars, you can trust me.",
+    "language":["English", "Zulu", "Pedi"],
+    "speciality":"exterior body parts",
+    "service_fee":"500"
+}
