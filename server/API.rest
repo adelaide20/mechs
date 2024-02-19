@@ -58,4 +58,4 @@ GET {{API}}/mech/all
 
 
 ### get all mechanics
-GET {{API}}/mech/one/65d338996de10e4f874d4106§
+GET {{API}}/mech/one/65d338996de10e4f874d4106

@@ -1,6 +1,9 @@
 const User = require('../model/users');
 const Profile = require('../model/mech_profile');
 
+let mechanics_data = [];
+
+
 
 // ========== CREATE MECHANIC PROFILE ==========
 exports.profile = async(req, res) => {
@@ -78,6 +81,9 @@ exports.allMechs = async(req, res) => {
                 }));
 
                 res.json(combinedData);
+
+                // Pushing combinedData into mechanics_data array
+                await mechanics_data.push(...combinedData)
             })
             .catch((error) => {
                 console.log(error);
@@ -94,21 +100,23 @@ exports.allMechs = async(req, res) => {
 
 // ========== GET MECHANIC BY ID ==========
 exports.mech = async(req, res) => {
-    const id = await Profile.findById(req.params.id);
+    const id = req.params.id;
 
-    if (!id) {
-        res.status(400);
-        throw new Error('mechanic not found');
-    }
+    // Using find to search for the specific ID
+    const foundData = mechanics_data.find((data) => data["Mechanic Info"]._id.toString() === id);
 
-    try {
-        const mechanic = await Profile.find({ id });
-        res.status(200).json(mechanic);
-    } catch (error) {
-        res.status(500).json({
-            message: "An error occurred while getting all the mechanics",
-            error: error.message
-        })
+
+    // Checking if the ID was found
+    if (foundData) {
+        // The specific ID was found, foundData now contains the corresponding combined data
+        res.json({
+            "Found data": foundData
+        });
+    } else {
+        // The specific ID was not found
+        res.json({
+            "Data not found for ID": id
+        });
     }
 }
 
