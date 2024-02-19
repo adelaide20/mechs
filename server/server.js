@@ -32,10 +32,13 @@ connectDB();
 // basic route for testing
 app.get('/', (req, res) => res.send('Hello, Welcome To Your Gear Guru Match Maker!'));
 
-// user auth route
+// user auth routes
 app.use('/auth', require("./routes/auth"));
 
-// mechanic route
+// mechanic routes
 app.use('/mech', require("./routes/mechanic"));
+
+// client routes
+app.use('/client', require("./routes/client"));
 
 app.listen(port, () => console.log(`Example app listening on port  ${port}`));

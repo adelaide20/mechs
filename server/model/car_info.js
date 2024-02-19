@@ -6,11 +6,11 @@ const CarSchema = new Mongoose.Schema({
         type: Mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
-    model: {
+    make: {
         type: String,
         required: true,
     },
-    make: {
+    model: {
         type: String,
         required: true,
     },

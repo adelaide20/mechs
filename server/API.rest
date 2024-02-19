@@ -59,3 +59,20 @@ GET {{API}}/mech/all
 
 ### get all mechanics
 GET {{API}}/mech/one/65d338996de10e4f874d4106
+
+
+
+
+############### CLIENT ROUTES ###############
+
+### add a car
+POST {{API}}/client/add
+content-type: application/json
+
+{
+    "_id":"65d33bae6de10e4f874d4109",
+    "make":"Suzuki",
+    "model":"Swift",
+    "registration":"QW12ER GP",
+    "fuel_type":"petrol"
+}

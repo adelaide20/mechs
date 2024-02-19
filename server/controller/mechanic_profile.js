@@ -13,7 +13,7 @@ exports.profile = async(req, res) => {
     const { _id, bio, language, speciality, service_fee } = req.body;
 
     // 2. input validation
-    if (!(bio || language || speciality || service_fee)) {
+    if (!(_id || bio || language || speciality || service_fee)) {
         res.status(401).json({
             message: "All fields are required!"
         })
@@ -46,7 +46,7 @@ exports.profile = async(req, res) => {
         }
     } catch (error) {
         res.status(500).json({
-            message: "An error occurred while trying to login",
+            message: "An error occurred while trying to create a mechanic profile",
             error: error.message
         });
     }
