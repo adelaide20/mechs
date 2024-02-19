@@ -2,6 +2,18 @@ const User = require('../model/users');
 const Profile = require('../model/mech_profile');
 
 
+// ========== GET ALL MECHANICS ==========
+exports.allMechs = async(req, res) => {
+
+}
+
+
+// ========== GET MECHANIC BY ID ==========
+exports.mech = async(req, res) => {
+
+}
+
+
 // ========== CREATE MECHANIC PROFILE ==========
 exports.profile = async(req, res) => {
 
@@ -47,4 +59,16 @@ exports.profile = async(req, res) => {
             error: error.message
         });
     }
+}
+
+
+// ========== UPDATE MECHANIC PROFILE ==========
+exports.profileUpdate = async(req, res) => {
+
+}
+
+
+// ========== ADD PICTURES FOR REFERENCE ==========
+exports.gallery = async(req, res) => {
+
 }
