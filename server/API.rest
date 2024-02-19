@@ -1,0 +1,34 @@
+
+###Variable holding the port
+@API = http://localhost:3000
+
+
+
+### tesing the server
+GET {{API}}
+
+
+
+### Register a user (client/mechanic)
+POST {{API}}/auth/register
+content-type: application/json
+
+{
+    "full_name":"Road Rover",
+    "email":"roadrover@gmail.com",
+    "contact_no":"0123456789",
+    "location":["Midrand"],
+    "password":"rover1234",
+    "role":"client"
+}
+
+
+
+### Login user (client/mechanic)
+POST {{API}}/auth/login
+content-type: application/json
+
+{
+    "email":"gearguru@gmail.com",
+    "password":"guru1234"
+}
