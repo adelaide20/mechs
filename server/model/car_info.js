@@ -1,7 +1,6 @@
 const Mongoose = require("mongoose");
 
 
-// database profile schema (table in sql) 
 const CarSchema = new Mongoose.Schema({
     _user: {
         type: Mongoose.Schema.Types.ObjectId,
@@ -26,7 +25,6 @@ const CarSchema = new Mongoose.Schema({
 })
 
 
-// profile model holding the schema 
 const Car = Mongoose.model("cars", CarSchema)
 
 
