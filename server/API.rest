@@ -46,3 +46,8 @@ content-type: application/json
     "speciality":"exterior body parts",
     "service_fee":"500"
 }
+
+
+
+### get all mechanics
+GET {{API}}/mech/all

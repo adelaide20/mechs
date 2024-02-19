@@ -2,18 +2,6 @@ const User = require('../model/users');
 const Profile = require('../model/mech_profile');
 
 
-// ========== GET ALL MECHANICS ==========
-exports.allMechs = async(req, res) => {
-
-}
-
-
-// ========== GET MECHANIC BY ID ==========
-exports.mech = async(req, res) => {
-
-}
-
-
 // ========== CREATE MECHANIC PROFILE ==========
 exports.profile = async(req, res) => {
 
@@ -60,6 +48,29 @@ exports.profile = async(req, res) => {
         });
     }
 }
+
+
+// ========== GET ALL MECHANICS ==========
+exports.allMechs = async(req, res) => {
+    try {
+        const mechanics = await User.find({ role: "mechanic" });
+        res.status(200).json(mechanics);
+    } catch (error) {
+        res.status(500).json({
+            message: "An error occurred while getting all the mechanics",
+            error: error.message
+        })
+    }
+}
+
+
+// ========== GET MECHANIC BY ID ==========
+exports.mech = async(req, res) => {
+
+}
+
+
+
 
 
 // ========== UPDATE MECHANIC PROFILE ==========
