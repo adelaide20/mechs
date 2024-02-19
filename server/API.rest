@@ -114,5 +114,10 @@ GET {{API}}/client/app/all
 content-type: application/json
 
 {
-    "_id":"65d33bae6de10e4f874d4108"
+    "_id":"65d33bae6de10e4f874d4109"
 }
+
+
+
+### get one appointment for a specific client
+GET {{API}}/client/app/one/65d3de827e5dded9b8383e96

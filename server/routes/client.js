@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 
 const { addCar, allCars, oneCar } = require("../controller/client_profile");
-const { addAppointment, allAppointments } = require("../controller/appintment")
+const { addAppointment, allAppointments, oneAppointment } = require("../controller/appintment")
 
 // 1. add a car
 router.post("/add", addCar);
@@ -21,6 +21,9 @@ router.post("/app/create", addAppointment)
 
 // 6. get all appointments
 router.get("/app/all", allAppointments)
+
+// 7. get one appointment
+router.get("/app/one/:id", oneAppointment)
 
 // 7. cancel appointment
 

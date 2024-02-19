@@ -63,7 +63,22 @@ exports.allAppointments = async(req, res) => {
 
 // ========== GET ONE APPOINTMENT ==========
 exports.oneAppointment = async(req, res) => {
+    const id = await Appointment.findById(req.params.id);
 
+    try {
+        if (!id) {
+            res.status(400);
+            throw new Error('Appointment not found');
+        } else {
+            const appointment = await Appointment.findById(id);
+            res.status(200).json(appointment);
+        }
+    } catch (error) {
+        res.status(500).json({
+            message: `An error occurred while getting an appointment with ID: ${id}`,
+            error: error.message
+        })
+    }
 }
 
 
