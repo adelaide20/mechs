@@ -4,18 +4,18 @@ const Appointment = require('../model/appointment');
 
 // ========== CLIENT MAKE APPOINTMENT ==========
 exports.addAppointment = async(req, res) => {
-    const { client, car, mechanic, service_type, details, date_time } = req.body;
+    const { _client, _car, _mechanic, service_type, details, date_time } = req.body;
 
-    if (!(client || car || mechanic || service_type || details || date_time)) {
+    if (!(_client || _car || _mechanic || service_type || details || date_time)) {
         res.status(401).json({
             message: "All fields are required!"
         })
     }
 
     const newAppointment = new Appointment({
-        _client: client,
-        _car: car,
-        _mechanic: mechanic,
+        _client: _client,
+        _car: _car,
+        _mechanic: _mechanic,
         service_type: service_type,
         details: details,
         date_time: date_time
@@ -40,7 +40,24 @@ exports.addAppointment = async(req, res) => {
 
 // ========== GET ALL APPOINTMENTS ==========
 exports.allAppointments = async(req, res) => {
+    const _id = req.body;
 
+    if (!_id) {
+        res.status(400);
+        throw new Error('client not found');
+    }
+
+    try {
+        const appointment = await Appointment.find({
+            _client: _id
+        })
+        res.status(200).json(appointment);
+    } catch (error) {
+        res.status(500).json({
+            message: `An error occurred while getting cars for ID: ${_id}`,
+            error: error.message
+        })
+    }
 }
 
 
