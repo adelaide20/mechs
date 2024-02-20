@@ -5,53 +5,53 @@
     <b class="text-center">Create Account</b>
 
     <!-- form -->
-    <form class="my-4">
+    <form class="my-4" [formGroup]="form" autocomplete="off">
         <!-- full name -->
         <div class="row">
             <div class="col-6">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" formControlName="first_name">
                 </div>
             </div>
             <div class="col-6">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" formControlName="last_name">
                 </div>
             </div>
         </div>
 
         <!-- email -->
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label class="form-label">Email address</label>
+            <input type="email" class="form-control" formControlName="email">
         </div>
 
         <!-- contact number -->
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Contact Number</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label class="form-label">Contact Number</label>
+            <input type="number" pattern=".{9,10}" class="form-control" formControlName="contact_no">
         </div>
 
         <!-- location -->
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Location</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label class="form-label">Location</label>
+            <input type="email" class="form-control" formControlName="location">
         </div>
 
         <!-- password -->
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="password">
         </div>
 
         <!-- role -->
-        <select class="form-select" aria-label="Default select example">
-                    <option selected>select the role</option>
-                    <option value="client">Client</option>
-                    <option value="mechanic">Mechanic</option>
-                  </select>
+        <select class="form-select" formControlName="role" aria-label="Default select example">
+            <option selected>select the role</option>
+            <option value="client">Client</option>
+            <option value="mechanic">Mechanic</option>
+        </select>
 
 
         <div class="d-grid gap-2  col-6 mx-auto">
