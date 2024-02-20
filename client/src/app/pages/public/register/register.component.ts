@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/services/alert.service';
 import { UserService } from 'src/app/services/user.service';
@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   form = new FormGroup({
     first_name: new FormControl(''),
     last_name: new FormControl(''),
-    email: new FormControl(''),
+    email: new FormControl('', [Validators.email]),
     contact_no: new FormControl(''),
     location: new FormControl(''),
     password: new FormControl(''),
@@ -45,11 +45,9 @@ export class RegisterComponent implements OnInit {
     }; 
 
     // registration function
-
     this.service.register(user).subscribe((res:any)=>{
-      this.alert.success(`${res.message} "\n" Welcome ${res.full_name}`);
-      this.service.storeUser(res);
-      this.router.navigate(['/dash']);
+      this.alert.success(res.message);
+      this.router.navigate(['/login']);
     },
     (error) =>
       {

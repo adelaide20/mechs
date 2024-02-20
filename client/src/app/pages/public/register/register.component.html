@@ -11,13 +11,13 @@
             <div class="col-6">
                 <div class="mb-3">
                     <label class="form-label">First Name</label>
-                    <input type="text" class="form-control" formControlName="first_name">
+                    <input type="text" class="form-control" formControlName="first_name" required>
                 </div>
             </div>
             <div class="col-6">
                 <div class="mb-3">
                     <label class="form-label">Last Name</label>
-                    <input type="text" class="form-control" formControlName="last_name">
+                    <input type="text" class="form-control" formControlName="last_name" required>
                 </div>
             </div>
         </div>
@@ -25,29 +25,29 @@
         <!-- email -->
         <div class="mb-3">
             <label class="form-label">Email address</label>
-            <input type="email" class="form-control" formControlName="email">
+            <input type="email" class="form-control" formControlName="email" required>
         </div>
 
         <!-- contact number -->
         <div class="mb-3">
             <label class="form-label">Contact Number</label>
-            <input type="number" pattern=".{9,10}" class="form-control" formControlName="contact_no">
+            <input type="number" pattern=".{9,10}" class="form-control" formControlName="contact_no" required>
         </div>
 
         <!-- location -->
         <div class="mb-3">
             <label class="form-label">Location</label>
-            <input type="email" class="form-control" formControlName="location">
+            <input type="email" class="form-control" formControlName="location" required>
         </div>
 
         <!-- password -->
         <div class="mb-3">
             <label class="form-label">Password</label>
-            <input type="password" class="form-control" formControlName="password">
+            <input type="password" pattern=".{4,15}" class="form-control" formControlName="password" required>
         </div>
 
         <!-- role -->
-        <select class="form-select" formControlName="role" aria-label="Default select example">
+        <select class="form-select" formControlName="role" aria-label="Default select example" required>
             <option selected>select the role</option>
             <option value="client">Client</option>
             <option value="mechanic">Mechanic</option>

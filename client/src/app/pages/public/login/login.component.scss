@@ -10,3 +10,21 @@ button {
         color: #6d63fe;
     }
 }
+
+.ng-valid[required],
+.ng-valid.required {
+    border-left: 3px solid #42A948;
+    /* green */
+}
+
+.ng-invalid:not(form) {
+    border-left: 3px solid #a94442;
+    /* red */
+}
+
+.alert div {
+    background-color: #fed3d3;
+    color: #820000;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}

@@ -79,6 +79,13 @@ exports.login = async(req, res) => {
     // 3. check if user exists
     const checkUser = await User.findOne({ email });
 
+    if (!checkUser) {
+        res.status(401).json({
+            message: "User not found",
+        });
+        return
+    }
+
     // 4. compare password with db hashed password
     const comparePass = await bcrypt.compare(req.body.password, checkUser.password)
 
@@ -95,7 +102,7 @@ exports.login = async(req, res) => {
 
     // 6. if user doesn't exist or passwords don't match return error, else generate token and login user
     try {
-        if (!checkUser || !comparePass) {
+        if (!comparePass) {
             res.status(401).json({
                 message: "Email or Password incorrect",
                 error: "Invalid user",
