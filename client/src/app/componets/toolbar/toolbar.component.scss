@@ -1,0 +1,31 @@
+.tabs {
+    width: 100vw;
+    display: flex;
+    border-radius: 1rem 1rem 0 0;
+    overflow: hidden;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    .tab {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--purple);
+        color: var(--whitesmoke);
+        cursor: pointer;
+        padding: .2rem 0;
+        i {
+            font-size: 1.6rem;
+        }
+        span {
+            font-size: 0.6rem;
+        }
+    }
+}
+
+.active {
+    background-color: var(--purple-100) !important;
+    color: var(--white) !important;
+}

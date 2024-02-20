@@ -1,0 +1,12 @@
+img {
+    width: fill;
+}
+
+button {
+    background-color: #6d63fe;
+    color: white;
+    &:hover {
+        border-color: #6d63fe;
+        color: #6d63fe;
+    }
+}
