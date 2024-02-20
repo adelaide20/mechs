@@ -10,6 +10,10 @@ import { HomeComponent } from './pages/client/home/home.component';
 import { ProfileComponent } from './pages/client/profile/profile.component';
 import { ToolbarComponent } from './componets/toolbar/toolbar.component';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { CreateComponent } from './pages/appointment/create/create.component';
+import { UpdateComponent } from './pages/appointment/update/update.component';
+import { MechProfileComponent } from './pages/mechanic/mech-profile/mech-profile.component';
+import { ListComponent } from './pages/appointment/list/list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { LayoutComponent } from './pages/layout/layout.component';
     HomeComponent,
     ProfileComponent,
     ToolbarComponent,
-    LayoutComponent
+    LayoutComponent,
+    CreateComponent,
+    UpdateComponent,
+    MechProfileComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

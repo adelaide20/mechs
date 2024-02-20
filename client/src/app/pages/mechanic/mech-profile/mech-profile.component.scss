@@ -1,0 +1,46 @@
+.card {
+    border: .5px solid #6d63fe;
+    .card-body {
+        position: relative;
+        z-index: 999;
+    }
+    img {
+        width: fill;
+        border-radius: 50%;
+    }
+    span {
+        color: grey;
+        font-size: smaller;
+    }
+    i {
+        font-size: large;
+        color: #6d63fe;
+    }
+    i.bi-envelope-exclamation {
+        font-size: x-large;
+        color: #6d63fe;
+    }
+    button {
+        border-color: #6d63fe;
+        color: #6d63fe;
+        background-color: #fff;
+        width: 100%;
+        &:hover {
+            background-color: #6d63fe;
+            color: white;
+        }
+    }
+    .review {
+        border-bottom: 1px solid #6d63fe;
+    }
+}
+
+button {
+    background-color: #6d63fe;
+    color: white;
+    width: 100%;
+    &:hover {
+        border-color: #6d63fe;
+        color: #6d63fe;
+    }
+}

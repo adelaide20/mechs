@@ -1,0 +1,15 @@
+.card {
+    border: .5px solid #6d63fe;
+    .card-body {
+        position: relative;
+        z-index: 999;
+    }
+    img {
+        width: fill;
+        border-radius: 50%;
+    }
+    span {
+        color: grey;
+        font-size: smaller;
+    }
+}

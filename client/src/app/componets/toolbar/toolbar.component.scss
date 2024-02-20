@@ -12,8 +12,8 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background-color: var(--purple);
-        color: var(--whitesmoke);
+        background-color: #6d63fe;
+        color: #fff;
         cursor: pointer;
         padding: .2rem 0;
         i {
@@ -26,6 +26,6 @@
 }
 
 .active {
-    background-color: var(--purple-100) !important;
-    color: var(--white) !important;
+    background-color: #6d63fe !important;
+    color: #fff !important;
 }

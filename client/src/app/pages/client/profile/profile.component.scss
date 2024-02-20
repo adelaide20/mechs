@@ -1,0 +1,27 @@
+    .card {
+        border: .5px solid #6d63fe;
+        img {
+            width: fill;
+            border-radius: 50%;
+        }
+        button {
+            background-color: #6d63fe;
+            color: white;
+            &:hover {
+                background-color: #fff;
+                border-color: #6d63fe;
+                color: #6d63fe;
+            }
+        }
+    }
+    
+    button {
+        width: 100%;
+        background-color: #fff;
+        border-color: #6d63fe;
+        color: #6d63fe;
+        &:hover {
+            background-color: #6d63fe;
+            color: white;
+        }
+    }
