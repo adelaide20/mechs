@@ -16,6 +16,7 @@ exports.register = async(req, res) => {
         res.status(401).json({
             message: "All fields are required!"
         })
+        return
     }
 
     // 3. password length
@@ -72,6 +73,7 @@ exports.login = async(req, res) => {
         res.status(401).json({
             message: "All fields are required!"
         })
+        return
     }
 
     // 3. check if user exists

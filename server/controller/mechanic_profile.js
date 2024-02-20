@@ -17,6 +17,7 @@ exports.profile = async(req, res) => {
         res.status(401).json({
             message: "All fields are required!"
         })
+        return
     }
 
     // 3. check if mechanic exists

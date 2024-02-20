@@ -72,6 +72,17 @@ content-type: application/json
 
 
 
+### mechanic generate invoice
+POST {{API}}/mech/invoice
+content-type: application/json
+
+{
+    "_appointment":"65d3e369f71606466b4f3bca",
+    "price": 800
+}
+
+
+
 
 ############### CLIENT ROUTES ###############
 

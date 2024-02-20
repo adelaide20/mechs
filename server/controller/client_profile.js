@@ -10,6 +10,7 @@ exports.addCar = async(req, res) => {
         res.status(401).json({
             message: "All fields are required!"
         })
+        return
     }
 
 

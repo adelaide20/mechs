@@ -25,9 +25,14 @@ router.get("/app/all", allAppointments)
 // 7. get one appointment
 router.get("/app/one/:id", oneAppointment)
 
-// 7. cancel appointment
+// 8. add feedback
 
 
-// 7. add feedback
+// 9. view all feedbacks
+
+
+// 10. get one invoice
+
+
 
 module.exports = router
