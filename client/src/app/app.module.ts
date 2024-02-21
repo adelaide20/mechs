@@ -20,6 +20,7 @@ import { MechProfileComponent } from './pages/mechanic/mech-profile/mech-profile
 import { ListComponent } from './pages/appointment/list/list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SearchPipe } from './pipe/search.pipe';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     CreateComponent,
     UpdateComponent,
     MechProfileComponent,
-    ListComponent
+    ListComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

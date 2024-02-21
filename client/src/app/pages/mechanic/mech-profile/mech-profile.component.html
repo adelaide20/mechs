@@ -10,7 +10,7 @@
                     <img src="../../../../assets/undraw_automobile_repair_ywci-removebg-preview.png" class="rounded-circle" alt="profile picture">
                 </div>
                 <div class="col-6">
-                    <b>full name </b><br>
+                    <b>{{mechanic.foundData.mechanic.full_name |titlecase}} </b><br>
                     <span>5 reviews</span>
                 </div>
                 <div class="col-2">
@@ -35,7 +35,7 @@
                     <i class="bi bi-phone"></i>
                 </div>
                 <div class="col-11">
-                    <p>contact
+                    <p>{{mechanic.foundData.mechanic.contact_no}}
                     </p>
                 </div>
                 <!-- email address -->
@@ -43,7 +43,7 @@
                     <i class="bi bi-envelope"></i>
                 </div>
                 <div class="col-11">
-                    <p>email
+                    <p>{{mechanic.foundData.mechanic.email}}
                     </p>
                 </div>
                 <!-- location -->
@@ -51,7 +51,7 @@
                     <i class="bi bi-geo-alt-fill"></i>
                 </div>
                 <div class="col-11">
-                    <p>location
+                    <p>{{mechanic.foundData.mechanic.location }}
                     </p>
                 </div>
                 <!-- service fee -->
@@ -59,7 +59,7 @@
                     <i class="bi bi-cash"></i>
                 </div>
                 <div class="col-11">
-                    <p>fee
+                    <p>{{mechanic.foundData.mechanic.profile[0].service_fee |currency:'R '}}
                     </p>
                 </div>
             </div>

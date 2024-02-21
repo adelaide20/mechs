@@ -4,45 +4,45 @@
 
     <!-- search -->
     <div class="input-group my-3">
-        <input type="text" class="form-control" placeholder="search" aria-describedby="button-addon2">
+        <input type="text" [(ngModel)]="searchTerm" class="form-control" placeholder="search" aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
     </div>
 
 
     <!-- mechanics -->
     <div class="mechanic my-5">
-        <h6 class="text-center">Mechanics in your location</h6>
+        <h6 class="text-center mb-3">Recommended Mechanics</h6>
 
 
 
-        <div class="card shadow bg-body-tertiary rounded">
+        <div *ngFor="let mech of mechanics | search:searchTerm" class="card shadow mb-3 bg-body-tertiary rounded" (click)="mechanicProfile(mech?.mechanic._id)">
             <div class="card-body">
-                <a routerLink="/dash/mechpro">
-                    <!-- info -->
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="../../../../assets/undraw_automobile_repair_ywci-removebg-preview.png" class="rounded-circle" alt="profile picture">
-                        </div>
-                        <div class="col-8">
-                            <b>full name </b><br>
-                            <span>5 reviews</span>
-                        </div>
+                <!-- <a routerLink="/dash/mechpro"> -->
+                <!-- info -->
+                <div class="row">
+                    <div class="col-4">
+                        <img src={{mech?.mechanic.profile_pic}} class="rounded-circle" alt="profile picture">
                     </div>
+                    <div class="col-8">
+                        <b>{{mech?.mechanic.full_name}}</b><br>
+                        <span>5 reviews</span>
+                    </div>
+                </div>
 
-                    <!-- location -->
-                    <div class="row mt-3">
-                        <div class="col-1">
-                            <i class="bi bi-geo-alt-fill"></i>
-                        </div>
-                        <div class="col-8">
-                            <p>location </p>
-                        </div>
-                        <div class="col-3">
-                            <b> R500 </b><br>
-                            <span>from</span>
-                        </div>
+                <!-- location -->
+                <div class="row mt-3">
+                    <div class="col-1">
+                        <i class="bi bi-geo-alt-fill"></i>
                     </div>
-                </a>
+                    <div class="col-8">
+                        <p>{{mech?.mechanic.location}} </p>
+                    </div>
+                    <div class="col-3">
+                        <b> {{mech?.mechanic.profile[0].service_fee}} </b><br>
+                        <span>from</span>
+                    </div>
+                </div>
+                <!-- </a> -->
 
 
             </div>

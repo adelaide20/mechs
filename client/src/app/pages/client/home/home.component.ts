@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Mechanic } from 'src/app/interfaces/mechanic';
+import { AlertService } from 'src/app/services/alert.service';
+import { MechanicService } from 'src/app/services/mechanic.service';
 
 @Component({
   selector: 'app-home',
@@ -7,15 +10,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  mechanics:any = [] 
 
-  constructor(private router:Router) { }
+  searchTerm = '';
+
+  constructor(private router:Router, private alert:AlertService, private service:MechanicService) { }
 
   ngOnInit(): void {
+      this.service.allMechanics().subscribe((res:any)=>{
+        this.mechanics = res
+        console.log(this.mechanics);
+      })
+
+  
+      
   }
 
 
-  mechanicProfile(){
-    this.router.navigate(['/mechpro']);
+
+  mechanicProfile(id:any){
+
+    let url = '/dash/mechpro'
+
+    localStorage.setItem('selectedMech', JSON.stringify (id));
+    setTimeout(() => {
+      this.router.navigate([url]);
+    }, 500);
   }
 
 }
