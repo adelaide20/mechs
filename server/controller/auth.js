@@ -79,7 +79,7 @@ exports.login = async(req, res) => {
     // 3. check if user exists
     const checkUser = await User.findOne({ email });
 
-    console.log(checkUser.id)
+    console.log(checkUser)
 
     if (!checkUser) {
         res.status(401).json({
@@ -94,9 +94,9 @@ exports.login = async(req, res) => {
     // 5. user object holding login details
     const user = ({
         id: checkUser._id,
-        full_name: checkUser.fullname,
+        full_name: checkUser.full_name,
         email,
-        contact_no: checkUser.fullname,
+        contact_no: checkUser.contact_no,
         location: checkUser.location,
         picture: checkUser.picture,
         password: checkUser.password,
@@ -114,7 +114,6 @@ exports.login = async(req, res) => {
             // 7. generate token
             const token = jwt.sign({
                     user
-
                 },
                 process.env.JWT_KEY, { expiresIn: 28800 }
             );

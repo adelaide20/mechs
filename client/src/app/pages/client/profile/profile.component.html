@@ -10,10 +10,10 @@
                     <img src="../../../../assets/undraw_automobile_repair_ywci-removebg-preview.png" class="rounded-circle" alt="profile picture">
                 </div>
                 <div class="col-8">
-                    <b>full name </b><br>
-                    <span>email</span><br>
-                    <span>contact number</span><br>
-                    <span>location</span>
+                    <b>{{user.user.full_name | titlecase}} </b><br>
+                    <span>{{user.user.email}}</span><br>
+                    <span>0{{user.user.contact_no}}</span><br>
+                    <span>{{user.user.location}}</span>
                 </div>
             </div>
         </div>
@@ -22,13 +22,13 @@
     <h5 class="text-center mt-5">Your cars</h5>
 
 
-    <div class="card my-3 shadow bg-body-tertiary rounded">
+    <div class="card my-3 shadow bg-body-tertiary rounded" *ngFor="let c of cars">
         <div class="card-body">
             <!-- info -->
             <div class="row">
                 <div class="col-8">
-                    <b>make and model </b><br>
-                    <span>registration</span><br>
+                    <b>{{c.make}} {{c.model}}</b><br>
+                    <span>{{c.registration}}</span><br>
                 </div>
                 <div class="col-4">
                     <button type="button" class="btn mt-3">Delete</button>
@@ -38,6 +38,6 @@
     </div>
 
 
-    <button type="button" class="btn mt-3">Logout</button>
+    <button type="button" class="btn mt-3" (click)="logout()">Logout</button>
 
 </div>
