@@ -29,6 +29,19 @@ export class ListComponent implements OnInit {
       console.log(this.appointments);
       
     })
+
+
+
+    this.appointments.forEach((appointment:any) => {
+      console.log("Status:", appointment.status);
+      console.log("Service Type:", appointment.service_type);
+    });
+
+
+    // this.carServ.getCar(this.appointments._car).subscribe(res=>{
+    //   console.log(res);
+      
+    // })
   }
 
 

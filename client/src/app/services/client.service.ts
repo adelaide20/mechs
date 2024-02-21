@@ -15,6 +15,10 @@ export class ClientService {
     return this.http.get(`${environment.SERVER_URL}` + '/client/all/' + client);
   }
 
+  // get one car
+  getCar(car: any) {
+    return this.http.get(`${environment.SERVER_URL}` + '/client/one/' + car);
+  }
 
   // make appointment
   makeAppointment(appointment: Appointment) {

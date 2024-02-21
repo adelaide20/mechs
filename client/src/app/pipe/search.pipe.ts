@@ -14,9 +14,11 @@ export class SearchPipe implements PipeTransform {
     searchText = searchText.toLowerCase();
 
     return mechanics.filter(mechanic => {
-      const location = mechanic.location.toLowerCase().includes(searchText);
-     
-      return location;
+      const location = mechanic.location?.toLowerCase()?.includes(searchText);
+      const full_name = mechanic.full_name?.toLowerCase()?.includes(searchText);
+
+
+      return location + full_name;
     });
   }
 

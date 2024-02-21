@@ -23,3 +23,63 @@
 
 
 </div>
+
+
+
+
+<!-- 
+<div class="container">
+    <h5 class="text-center my-3">Your appointments</h5>
+
+
+    <div class="card my-3 shadow bg-body-tertiary rounded" *ngFor="let a of appointments">
+        <div class="card-body">
+            
+<div class="row">
+    <div class="col-8">
+        <p>{{a.status}}</p>
+        <b>{{a.service_type}}</b>
+
+    </div>
+    <div class="col-4">
+        <span>{{ a.date_time | date:'mediumDate'}}</span><br>
+        <span class="time">{{ a.date_time | date:'shortTime'}}</span>
+    </div>
+    <div class="col-6">
+        <button type="button" class="btn mt-3" (click)="cancelApp()" *ngIf="a.status === 'pending'">Cancel</button>
+    </div>
+    <div class="col-6">
+        <button type="button" class="btn mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        more info
+                       </button>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <span>Status: </span><br>
+                <span>Sercice Type:</span><br>
+                <span>Details: </span><br>
+                <span>Car:</span><br>
+                <span>Machenic:</span><br>
+                <span>Date & Time:</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+</div> -->
