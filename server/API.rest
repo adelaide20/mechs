@@ -15,12 +15,12 @@ POST {{API}}/auth/register
 content-type: application/json
 
 {
-    "full_name":"fufu cars",
-    "email":"fufu@gmail.com",
-    "contact_no":"0123456789",
+    "full_name":"Gear Guru",
+    "email":"gearguru@gmail.com",
+    "contact_no":"0895674312",
     "location":["Pretoria"],
-    "password":"fufu1234",
-    "role":"client"
+    "password":"123456",
+    "role":"mechanic"
 }
 
 
@@ -43,11 +43,11 @@ POST {{API}}/mech/create
 content-type: application/json
 
 {
-    "_id":"65d3b154e97bd418af12302d",
-    "bio":"I am located in Dubai & I fix cars, you can trust me.",
+    "_id":"65d5cc628f56c95a13096a2e",
+    "bio":"I am located in Pretoria & I fix cars, you can trust me.",
     "language":["English", "Venda", "Swahili"],
     "speciality":"repair body parts",
-    "service_fee":"900"
+    "service_fee":"500"
 }
 
 

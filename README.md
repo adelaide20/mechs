@@ -36,8 +36,8 @@ ng serve -o
 LOGIN DETAILS
 1. mechanic
 email: gearguru@gmail.com
-password: guru1234
+password: 123456
 
 2. client
 email: roadrover@gmail.com
-password: rover1234
+password: 123456
