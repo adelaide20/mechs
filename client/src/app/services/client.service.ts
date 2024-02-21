@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Appointment } from '../interfaces/appointment';
+import { Car } from '../interfaces/car';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,11 @@ import { Appointment } from '../interfaces/appointment';
 export class ClientService {
 
   constructor(private http: HttpClient) { }
+
+  // add a car
+  addCar(car: Car) {
+    return this.http.post(`${environment.SERVER_URL}` + '/client/add', car);
+  }
 
   // get all cars for a spefic client
   getCars(client: any) {

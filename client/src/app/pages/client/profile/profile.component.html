@@ -22,20 +22,81 @@
     <h5 class="text-center mt-5">Your cars</h5>
 
 
-    <div class="card my-3 shadow bg-body-tertiary rounded" *ngFor="let c of cars">
-        <div class="card-body">
-            <!-- info -->
-            <div class="row">
-                <div class="col-8">
-                    <b>{{c.make}} {{c.model}}</b><br>
-                    <span>{{c.registration}}</span><br>
-                </div>
-                <div class="col-4">
+    <div class="row">
+        <div class="col-6" *ngFor="let c of cars">
+            <div class="card my-3 shadow bg-body-tertiary rounded">
+                <div class="card-body">
+                    <!-- info -->
+
+                    <b>{{c.make | titlecase}} {{c.model | titlecase}}</b><br>
+                    <span>{{c.registration | uppercase}}</span><br>
+                    <span>{{c.fuel_type | titlecase}}</span><br>
+
                     <button type="button" class="btn mt-3">Delete</button>
+
                 </div>
             </div>
         </div>
     </div>
+
+    <button type="button" class="btn mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Add a car</button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- form -->
+                    <form class="" [formGroup]="form" autocomplete="off">
+                        <h5 class="text-center">Add your car info</h5>
+                        <!-- make -->
+                        <div class="mb-3">
+                            <label class="form-label">Make</label>
+                            <input type="text" class="form-control" formControlName="make" required>
+                        </div>
+
+                        <!-- model -->
+                        <div class="mb-3">
+                            <label class="form-label">Model</label>
+                            <input type="text" class="form-control" formControlName="model" required>
+                        </div>
+
+                        <!-- registration -->
+                        <div class="mb-3">
+                            <label class="form-label">Registration</label>
+                            <input type="text" class="form-control" formControlName="registration" required>
+                        </div>
+
+                        <!-- fuel -->
+                        <select class="form-select" formControlName="fuel_type" aria-label="Default select example" required>
+                            <option selected>select the role</option>
+                            <option value="petrol">Petrol</option>
+                            <option value="diesel">Diesel</option>
+                        </select>
+
+                        <!-- <div class="d-grid gap-2  col-6 mx-auto">
+                            <button type="button" class="btn mt-3" (click)="login()">Login</button>
+                        </div> -->
+                    </form>
+
+
+
+                </div>
+                <!-- <div class="modal-footer"> -->
+                <div class="row m-3">
+                    <div class="col-6"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    <div class="col-6"><button type="button" class="btn" (click)="addCar()">Save changes</button>
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+
 
 
     <button type="button" class="btn mt-3" (click)="logout()">Logout</button>
