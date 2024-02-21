@@ -2,21 +2,22 @@
     <h5 class="text-center my-3">Your appointments</h5>
 
 
-    <div class="card my-3 shadow bg-body-tertiary rounded">
+    <div class="card my-3 shadow bg-body-tertiary rounded" *ngFor="let a of appointments">
         <div class="card-body">
             <!-- info -->
-            <p>status</p>
-            <b>service type </b>
+            <p>{{a.status}}</p>
+            <b>{{a.service_type}}</b>
             <div class="row">
-                <div class="col-9">
+                <div class="col-8">
                     <b>car name </b><br>
                     <span>mechanic name</span>
                 </div>
-                <div class="col-3">
-                    <b>date </b><br>
-                    <span>time</span>
+                <div class="col-4">
+                    <span>{{ a.date_time | date:'mediumDate'}}</span><br>
+                    <span class="time">{{ a.date_time | date:'shortTime'}}</span>
                 </div>
             </div>
+            <button type="button" class="btn save mt-3" (click)="cancelApp()" *ngIf="a.status === 'pending'">Cancel</button>
         </div>
     </div>
 

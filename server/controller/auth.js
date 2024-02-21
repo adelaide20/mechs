@@ -79,6 +79,8 @@ exports.login = async(req, res) => {
     // 3. check if user exists
     const checkUser = await User.findOne({ email });
 
+    console.log(checkUser.id)
+
     if (!checkUser) {
         res.status(401).json({
             message: "User not found",
@@ -90,7 +92,8 @@ exports.login = async(req, res) => {
     const comparePass = await bcrypt.compare(req.body.password, checkUser.password)
 
     // 5. user object holding login details
-    const user = await new User({
+    const user = ({
+        id: checkUser._id,
         full_name: checkUser.fullname,
         email,
         contact_no: checkUser.fullname,
@@ -111,6 +114,7 @@ exports.login = async(req, res) => {
             // 7. generate token
             const token = jwt.sign({
                     user
+
                 },
                 process.env.JWT_KEY, { expiresIn: 28800 }
             );

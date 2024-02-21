@@ -20,4 +20,9 @@ export class ClientService {
   makeAppointment(appointment: Appointment) {
     return this.http.post(`${environment.SERVER_URL}` + '/client/app/create', appointment);
   }
+
+  // get all appointments for a specific client
+  getAppointments(client: any) {
+    return this.http.get(`${environment.SERVER_URL}` + '/client/app/all/' + client);
+  }
 }

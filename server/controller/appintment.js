@@ -1,5 +1,6 @@
 const User = require('../model/users');
 const Appointment = require('../model/appointment');
+const Car = require('../model/car_info');
 
 
 // ========== CLIENT MAKE APPOINTMENT ==========
@@ -41,24 +42,30 @@ exports.addAppointment = async(req, res) => {
 
 // ========== GET ALL APPOINTMENTS ==========
 exports.allAppointments = async(req, res) => {
-    const _id = req.body;
 
-    if (!_id) {
-        res.status(400);
-        throw new Error('client not found');
-    }
+    const id = await User.findById(req.params.id);
 
     try {
-        const appointment = await Appointment.find({
-            _client: _id
-        })
-        res.status(200).json(appointment);
+        if (!id) {
+            res.status(400);
+            throw new Error('user not found');
+        } else {
+            const appointment = await Appointment.find({
+                _client: id
+            })
+
+            res.status(200).json(
+                appointment
+
+            );
+        }
     } catch (error) {
         res.status(500).json({
-            message: `An error occurred while getting cars for ID: ${_id}`,
+            message: `An error occurred while getting appointments for user with ID: ${id}`,
             error: error.message
         })
     }
+
 }
 
 

@@ -31,7 +31,7 @@ content-type: application/json
 
 {
     "email":"k@k.com",
-    "password":"guru1234"
+    "password":"123456"
 }
 
 
@@ -57,7 +57,7 @@ GET {{API}}/mech/all
 
 
 
-### get all mechanics
+### get one mechanics
 GET {{API}}/mech/one/65d338996de10e4f874d4106
 
 
@@ -91,22 +91,17 @@ POST {{API}}/client/add
 content-type: application/json
 
 {
-    "_id":"65d3d250c9e4dad6915652e5",
-    "make":"Ford",
-    "model":"Ranger",
-    "registration":"123QWE GP",
-    "fuel_type":"dissel"
+    "_id":"65d522a5916e91a452283a03",
+    "make":"Renault",
+    "model":"Clio",
+    "registration":"G4H5J6 GP",
+    "fuel_type":"petrol"
 }
 
 
 
 ### get all cars for a specific client
-GET {{API}}/client/all
-content-type: application/json
-
-{
-    "_id":"65d3d250c9e4dad6915652e5"
-}
+GET {{API}}/client/all/65d522a5916e91a452283a03
 
 
 
@@ -131,12 +126,8 @@ content-type: application/json
 
 
 ### get all appointments for a specific client
-GET {{API}}/client/app/all
-content-type: application/json
+GET {{API}}/client/app/all/65d33bae6de10e4f874d4109
 
-{
-    "_id":"65d33bae6de10e4f874d4109"
-}
 
 
 

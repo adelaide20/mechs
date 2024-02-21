@@ -34,7 +34,6 @@ export class CreateComponent implements OnInit {
 
     this.client_id = client.user.id
 
-    console.log(this.client_id);
 
 
 
@@ -44,8 +43,6 @@ export class CreateComponent implements OnInit {
 
     this.carServ.getCars(this.client_id).subscribe(res => {
       this.car = res
-      console.log(this.car);
-
     })
 
   }

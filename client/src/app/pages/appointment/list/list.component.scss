@@ -7,4 +7,17 @@
         padding: .2rem 1rem;
         border-radius: 15rem;
     }
+    .time {
+        font-size: smaller;
+    }
+    button {
+        width: 100%;
+        border-color: #6d63fe;
+        color: #6d63fe;
+        background-color: #fff;
+        &:hover {
+            background-color: #6d63fe;
+            color: white;
+        }
+    }
 }

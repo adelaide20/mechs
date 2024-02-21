@@ -16,6 +16,7 @@ exports.addCar = async(req, res) => {
 
     const checkUser = await User.findById({ _id });
 
+    console.log(checkUser)
 
     try {
         if (checkUser.role != "client") {
@@ -51,21 +52,21 @@ exports.addCar = async(req, res) => {
 // ========== GET ALL CARS ==========
 exports.allCars = async(req, res) => {
 
-    const _id = req.body;
-
-    if (!_id) {
-        res.status(400);
-        throw new Error('client not found');
-    }
+    const id = await User.findById(req.params.id);
 
     try {
-        const cars = await Car.find({
-            _user: _id
-        })
-        res.status(200).json(cars);
+        if (!id) {
+            res.status(400);
+            throw new Error('client not found');
+        } else {
+            const car = await Car.find({
+                _user: id
+            });
+            res.status(200).json(car);
+        }
     } catch (error) {
         res.status(500).json({
-            message: `An error occurred while getting cars for ID: ${_id}`,
+            message: `An error occurred while getting a car for user with ID: ${id}`,
             error: error.message
         })
     }

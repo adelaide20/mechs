@@ -78,7 +78,7 @@ exports.allMechs = async(req, res) => {
 
                 // Mapping the result to match the original format
                 const combinedData = result.map((user) => ({
-                    "Mechanic Info": user,
+                    "mechanic": user,
                 }));
 
                 res.json(combinedData);
@@ -104,14 +104,14 @@ exports.mech = async(req, res) => {
     const id = req.params.id;
 
     // Using find to search for the specific ID
-    const foundData = mechanics_data.find((data) => data["Mechanic Info"]._id.toString() === id);
+    const foundData = await mechanics_data.find((data) => data["mechanic"]._id.toString() === id);
 
 
     // Checking if the ID was found
     if (foundData) {
         // The specific ID was found, foundData now contains the corresponding combined data
         res.json({
-            "Found data": foundData
+            "foundData": foundData
         });
     } else {
         // The specific ID was not found
