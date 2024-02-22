@@ -12,7 +12,7 @@ import { LoginComponent } from './pages/public/login/login.component';
 import { RegisterComponent } from './pages/public/register/register.component';
 import { HomeComponent } from './pages/client/home/home.component';
 import { ProfileComponent } from './pages/client/profile/profile.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { ToolbarComponent } from './components/client/toolbar/toolbar.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { CreateComponent } from './pages/appointment/create/create.component';
 import { UpdateComponent } from './pages/appointment/update/update.component';
@@ -21,6 +21,7 @@ import { ListComponent } from './pages/appointment/list/list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SearchPipe } from './pipe/search.pipe';
+import { InvoiceComponent } from './pages/invoice/invoice.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { SearchPipe } from './pipe/search.pipe';
     UpdateComponent,
     MechProfileComponent,
     ListComponent,
-    SearchPipe
+    SearchPipe,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,7 @@ import { SearchPipe } from './pipe/search.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     ToastrModule.forRoot({
-      timeOut: 10000,
+      timeOut: 1000,
       positionClass: 'toast-top-right',
       preventDuplicates: true
     }),

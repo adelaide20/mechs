@@ -18,6 +18,8 @@
                 </div>
             </div>
             <button type="button" class="btn save mt-3" (click)="cancelApp()" *ngIf="a.status === 'pending'">Cancel</button>
+
+            <button type="button" class="btn save mt-3" routerLink="/invoice" *ngIf="a.status === 'complete'">Invoice</button>
         </div>
 
         <!-- <h3 *ngIf="a.length === 0">You haven't made any appointments yet!</h3> -->

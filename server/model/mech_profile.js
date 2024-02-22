@@ -8,15 +8,15 @@ const ProfileSchema = new Mongoose.Schema({
         type: Mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
-    bio: {
+    bio: { // rename  to description
         type: String,
         required: true,
     },
-    language: [{
+    language: [{ // to be changed to operating hours
         type: String,
         required: true,
     }],
-    speciality: [{
+    speciality: [{ // these are available/offered services
         type: String,
         required: true,
     }],

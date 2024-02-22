@@ -16,8 +16,6 @@ exports.addCar = async(req, res) => {
 
     const checkUser = await User.findById({ _id });
 
-    console.log(checkUser)
-
     try {
         if (checkUser.role != "client") {
             res.status(401).json({

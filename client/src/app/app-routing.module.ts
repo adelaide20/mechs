@@ -16,8 +16,22 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
+  // client routings
   {
-    path: 'dash', component: LayoutComponent, children: [
+    path: 'client', component: LayoutComponent, children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'mechpro', component: MechProfileComponent },
+      { path: 'create', component: CreateComponent },
+      { path: 'apps', component: ListComponent },
+      { path: 'profile', component: ProfileComponent },
+    ]
+  }
+
+// mechanic routings
+
+  {
+    path: 'mechanic', component: LayoutComponent, children: [
       { path: 'home', component: HomeComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'profile', component: ProfileComponent },

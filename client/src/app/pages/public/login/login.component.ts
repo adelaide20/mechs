@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
 
       
       if (res.user.role === "client") {
-        this.router.navigate(['/dash']);
+        this.router.navigate(['/client']);
       }
       else{
         alert("admin dashboard under construction")

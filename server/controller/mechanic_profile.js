@@ -87,7 +87,10 @@ exports.allMechs = async(req, res) => {
                 await mechanics_data.push(...combinedData)
             })
             .catch((error) => {
-                console.log(error);
+                res.status(500).json({
+                    message: "An error occurred while getting all the mechanics",
+                    error: error.message
+                })
             });
 
     } catch (error) {

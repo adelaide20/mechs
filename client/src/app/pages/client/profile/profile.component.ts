@@ -33,7 +33,6 @@ export class ProfileComponent implements OnInit {
 
     this.carServ.getCars(this.client_id).subscribe(res => {
       this.cars = res
-      console.log(this.cars);
 
     })
 
@@ -58,7 +57,7 @@ export class ProfileComponent implements OnInit {
   this.carServ.addCar(car).subscribe((res:any)=>{
     this.alert.success(res.message);
   
-    this.router.navigate(['/dash/profile']);
+    this.router.navigate(['/client/profile']);
   })
     
 

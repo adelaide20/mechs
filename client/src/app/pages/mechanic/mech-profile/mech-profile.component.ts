@@ -17,13 +17,8 @@ export class MechProfileComponent implements OnInit {
   ngOnInit(): void {
     this.mech_id = JSON.parse(window.localStorage.getItem('selectedMech') || '');
 
-
-    console.log(this.mech_id);
-
     this.service.oneMechanic(this.mech_id).subscribe(res => {
       this.mechanic = res
-      console.log(this.mechanic);
-      console.log(this.mechanic.foundData.mechanic);
     })
 
   }

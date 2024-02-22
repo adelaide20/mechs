@@ -79,7 +79,6 @@ exports.login = async(req, res) => {
     // 3. check if user exists
     const checkUser = await User.findOne({ email });
 
-    console.log(checkUser)
 
     if (!checkUser) {
         res.status(401).json({

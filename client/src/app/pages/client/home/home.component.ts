@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
       this.service.allMechanics().subscribe((res:any)=>{
         this.mechanics = res
-        console.log(this.mechanics);
       })
 
   
@@ -30,7 +29,7 @@ export class HomeComponent implements OnInit {
 
   mechanicProfile(id:any){
 
-    let url = '/dash/mechpro'
+    let url = '/client/mechpro'
 
     localStorage.setItem('selectedMech', JSON.stringify (id));
     setTimeout(() => {

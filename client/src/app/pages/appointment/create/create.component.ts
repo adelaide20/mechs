@@ -65,13 +65,10 @@ export class CreateComponent implements OnInit {
         date_time: this.form.getRawValue().date_time
       };
 
-      console.log(appointment);
-
       this.carServ.makeAppointment(appointment).subscribe((res:any)=>{
-        console.log(res);
-        
+       
         this.alert.success(res.message);
-        this.router.navigate(['/dash/apps']);
+        this.router.navigate(['/client/apps']);
       },
       (error) => {        
         this.alert.error(error.error.message)
