@@ -9,8 +9,10 @@ import { ProfileComponent } from './pages/client/profile/profile.component';
 import { MechProfileComponent } from './pages/mechanic/mech-profile/mech-profile.component';
 import { CreateComponent } from './pages/appointment/create/create.component';
 import { ListComponent } from './pages/appointment/list/list.component';
+import { InvoiceComponent } from './pages/invoice/invoice.component';
 
 const routes: Routes = [
+  // public routings
   { path: 'landing', component: LandingComponent },
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
@@ -24,23 +26,14 @@ const routes: Routes = [
       { path: 'mechpro', component: MechProfileComponent },
       { path: 'create', component: CreateComponent },
       { path: 'apps', component: ListComponent },
+      { path: 'invoice', component: InvoiceComponent },
       { path: 'profile', component: ProfileComponent },
     ]
-  }
+  },
 
 // mechanic routings
 
-  {
-    path: 'mechanic', component: LayoutComponent, children: [
-      { path: 'home', component: HomeComponent },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'profile', component: ProfileComponent },
-      { path: 'mechpro', component: MechProfileComponent },
-      { path: 'create', component: CreateComponent },
-      { path: 'apps', component: ListComponent },
-    
-    ]
-  }
+ 
 ];
 
 @NgModule({

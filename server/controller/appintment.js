@@ -1,6 +1,7 @@
 const User = require('../model/users');
 const Appointment = require('../model/appointment');
 const Car = require('../model/car_info');
+const Invoice = require('../model/invoice');
 
 
 // ========== CLIENT MAKE APPOINTMENT ==========

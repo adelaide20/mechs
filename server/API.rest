@@ -72,18 +72,6 @@ content-type: application/json
 
 
 
-### mechanic generate invoice
-POST {{API}}/mech/invoice
-content-type: application/json
-
-{
-    "_appointment":"65d3e369f71606466b4f3bca",
-    "price": 800
-}
-
-
-
-
 ############### CLIENT ROUTES ###############
 
 ### add a car
@@ -133,3 +121,21 @@ GET {{API}}/client/app/all/65d33bae6de10e4f874d4109
 
 ### get one appointment for a specific client
 GET {{API}}/client/app/one/65d3de827e5dded9b8383e96
+
+
+
+
+############### CLIENT ROUTES ###############
+
+### mechanic generate invoice
+POST {{API}}/invoice/create
+content-type: application/json
+
+{
+    "_appointment":"65d3e369f71606466b4f3bca",
+    "price": 800
+}
+
+
+### get one invoice for a specific appointment
+GET {{API}}/invoice/get/65d3de827e5dded9b8383e96

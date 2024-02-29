@@ -3,7 +3,7 @@ const Appointment = require('../model/appointment');
 
 
 // ========== MECHANIC GENERATES INVOICE ==========
-exports.invoice = async(req, res) => {
+exports.createInvoice = async(req, res) => {
     const { _appointment, price } = req.body;
 
     if (!(_appointment, price)) {
@@ -35,6 +35,35 @@ exports.invoice = async(req, res) => {
             console.error(error);
             res.status(500).json({ error: 'An error occurred while generating the invoice.' });
         });
+
+}
+
+
+// ========== GET AN INVOICE PER APPOINTMENT ==========
+exports.getInvoice = async(req, res) => {
+
+    const id = await Appointment.findById(req.params.id);
+
+    try {
+        if (!id) {
+            res.status(400);
+            throw new Error('appointment not found');
+        } else {
+            const invoice = await Invoice.find({
+                _appointment: id
+            })
+
+            res.status(200).json(
+                invoice
+
+            );
+        }
+    } catch (error) {
+        res.status(500).json({
+            message: `An error occurred while getting invoice for appointment with ID: ${id}`,
+            error: error.message
+        })
+    }
 
 }
 

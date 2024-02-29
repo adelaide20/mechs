@@ -3,7 +3,7 @@ const router = express.Router()
 
 const { profile, allMechs, mech } = require("../controller/mechanic_profile");
 const { appointmentStatus } = require("../controller/appintment")
-const { invoice } = require("../controller/invoice")
+
 
 // 1. create mechanic profile
 router.post("/create", profile);

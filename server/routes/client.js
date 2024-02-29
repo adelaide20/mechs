@@ -25,13 +25,9 @@ router.get("/app/all/:id", allAppointments)
 // 7. get one appointment
 router.get("/app/one/:id", oneAppointment)
 
-// 8. add feedback
 
 
-// 9. view all feedbacks
 
-
-// 10. get one invoice
 
 
 

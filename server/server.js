@@ -41,4 +41,7 @@ app.use('/mech', require("./routes/mechanic"));
 // client routes
 app.use('/client', require("./routes/client"));
 
+// invoice routes
+app.use('/invoice', require("./routes/invoice"));
+
 app.listen(port, () => console.log(`Example app listening on port  ${port}`));

@@ -25,7 +25,7 @@ export class CreateComponent implements OnInit {
     date_time: new FormControl(''),
   });
 
-  constructor(private carServ: ClientService, private alert:AlertService, private router:Router) { }
+  constructor(private carServ: ClientService, private alert: AlertService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -48,31 +48,31 @@ export class CreateComponent implements OnInit {
   }
 
 
-  save(){
-    if(!this.form.getRawValue()){
+  save() {
+    if (!this.form.getRawValue()) {
       this.alert.error('All fileds are required');
       return;
     }
 
 
-       // object holding registration
-       let appointment = {
-        _client: this.client_id,
-        _car: this.form.getRawValue().car,
-        _mechanic:  this.mech_id,
-        service_type: this.form.getRawValue().service_type,
-        details: this.form.getRawValue().details,
-        date_time: this.form.getRawValue().date_time
-      };
+    // object holding registration
+    let appointment = {
+      _client: this.client_id,
+      _car: this.form.getRawValue().car,
+      _mechanic: this.mech_id,
+      service_type: this.form.getRawValue().service_type,
+      details: this.form.getRawValue().details,
+      date_time: this.form.getRawValue().date_time
+    };
 
-      this.carServ.makeAppointment(appointment).subscribe((res:any)=>{
-       
-        this.alert.success(res.message);
-        this.router.navigate(['/client/apps']);
-      },
-      (error) => {        
+    this.carServ.makeAppointment(appointment).subscribe((res: any) => {
+
+      this.alert.success(res.message);
+      this.router.navigate(['/client/apps']);
+    },
+      (error) => {
         this.alert.error(error.error.message)
       })
-      
+
   }
 }
