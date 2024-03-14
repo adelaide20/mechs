@@ -12,16 +12,17 @@ import { LoginComponent } from './pages/public/login/login.component';
 import { RegisterComponent } from './pages/public/register/register.component';
 import { HomeComponent } from './pages/client/home/home.component';
 import { ProfileComponent } from './pages/client/profile/profile.component';
-import { ToolbarComponent } from './components/client/toolbar/toolbar.component';
-import { LayoutComponent } from './pages/layout/layout.component';
 import { CreateComponent } from './pages/appointment/create/create.component';
 import { UpdateComponent } from './pages/appointment/update/update.component';
-import { MechProfileComponent } from './pages/mechanic/mech-profile/mech-profile.component';
+import { MechProfileComponent } from './pages/client/mech-profile/mech-profile.component';
 import { ListComponent } from './pages/appointment/list/list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SearchPipe } from './pipe/search.pipe';
 import { InvoiceComponent } from './pages/invoice/invoice.component';
+import { MechLayoutComponent } from './components/mech-layout/mech-layout.component';
+import { ClientLayoutComponent } from './components/client-layout/client-layout.component';
+import { DashboardComponent } from './pages/mechanic/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -32,14 +33,15 @@ import { InvoiceComponent } from './pages/invoice/invoice.component';
     RegisterComponent,
     HomeComponent,
     ProfileComponent,
-    ToolbarComponent,
-    LayoutComponent,
     CreateComponent,
     UpdateComponent,
     MechProfileComponent,
     ListComponent,
     SearchPipe,
-    InvoiceComponent
+    InvoiceComponent,
+    MechLayoutComponent,
+    ClientLayoutComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

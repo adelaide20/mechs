@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './pages/public/landing/landing.component';
-import { LayoutComponent } from './pages/layout/layout.component';
 import { LoginComponent } from './pages/public/login/login.component';
 import { RegisterComponent } from './pages/public/register/register.component';
 import { HomeComponent } from './pages/client/home/home.component';
 import { ProfileComponent } from './pages/client/profile/profile.component';
-import { MechProfileComponent } from './pages/mechanic/mech-profile/mech-profile.component';
+import { MechProfileComponent } from './pages/client/mech-profile/mech-profile.component';
 import { CreateComponent } from './pages/appointment/create/create.component';
 import { ListComponent } from './pages/appointment/list/list.component';
 import { InvoiceComponent } from './pages/invoice/invoice.component';
+import { ClientLayoutComponent } from './components/client-layout/client-layout.component';
+import { MechLayoutComponent } from './components/mech-layout/mech-layout.component';
+import { DashboardComponent } from './pages/mechanic/dashboard/dashboard.component';
 
 const routes: Routes = [
   // public routings
@@ -20,7 +22,7 @@ const routes: Routes = [
 
   // client routings
   {
-    path: 'client', component: LayoutComponent, children: [
+    path: 'client', component: ClientLayoutComponent, children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'mechpro', component: MechProfileComponent },
@@ -32,7 +34,12 @@ const routes: Routes = [
   },
 
 // mechanic routings
-
+{
+  path: 'mechanic', component: MechLayoutComponent , children: [
+    { path: '', redirectTo: 'dash', pathMatch: 'full' },
+    { path: 'dash', component: DashboardComponent },
+  ]
+},
  
 ];
 

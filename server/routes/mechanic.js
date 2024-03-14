@@ -23,8 +23,6 @@ router.get("/one/:id", mech);
 // 6. accept appointment
 router.put("/app/status/:id", appointmentStatus)
 
-// 7. generate invoice
-router.post("/invoice", invoice)
 
 // 8. get all invoices
 

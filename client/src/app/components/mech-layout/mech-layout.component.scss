@@ -1,0 +1,63 @@
+.logo {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--purple);
+    text-align: center;
+    font-size: 2rem;
+    margin-top: .5rem;
+}
+
+.logoText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.lay {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .main {
+        position: relative;
+        flex: 1;
+        overflow: scroll;
+    }
+}
+
+.tabs {
+    width: 100vw;
+    display: flex;
+    border-radius: 1rem 1rem 0 0;
+    overflow: hidden;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    .tab {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #6d63fe;
+        color: #fff;
+        cursor: pointer;
+        padding: .2rem 0;
+        i {
+            font-size: 1.6rem;
+        }
+        span {
+            font-size: 0.6rem;
+        }
+    }
+}
+
+.active {
+    background-color: #6d63fe !important;
+    color: #fff !important;
+}

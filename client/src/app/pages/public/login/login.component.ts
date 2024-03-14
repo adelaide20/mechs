@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/client']);
       }
       else{
-        alert("admin dashboard under construction")
+        this.router.navigate(['/mechanic']);
       }
      
     },
