@@ -1,6 +1,7 @@
 const User = require('../model/users');
 const Appointment = require('../model/appointment');
 const Car = require('../model/car_info');
+const User = require('../model/users');
 const Invoice = require('../model/invoice');
 
 
@@ -14,6 +15,16 @@ exports.addAppointment = async(req, res) => {
         })
         return
     }
+
+    // find car info
+    const car = await Car.findById(_car)
+
+    // find mechanic info
+    const mech = await Car.findById(_mech)
+
+    // find client info
+    const client = await Car.findById(_client)
+
 
     const newAppointment = new Appointment({
         _client: _client,
